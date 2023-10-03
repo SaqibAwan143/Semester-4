@@ -1,0 +1,25 @@
+8----1
+\\\textbf{Relational Algebra :\\
+\\
+\pi_{\text{p}}(\sigma_{\text{p.cost} > \sigma_{\text{sum(cost)} \in \pi_{\text{sum(cost)}}(\sigma_{\text{year} < 2015}(\text{Product})) \land \text{year} > 2015}(\text{Product}))
+}
+
+
+8----2
+\\\textbf{Relational Algebra :\\
+\\
+\rho_{p,p1}(\sigma_{p.cost > (\sigma_{year < 2015}(cost)) \wedge p1.year > 2015 \wedge p.name \neq p1.name}(Product \times Product))
+}
+
+
+3
+\\\textbf{Relational Algebra :\\
+\\
+\pi_{p.year, p.cost, p1.cost}(\sigma_{p.year > 2015 \land p.cost > \sum p1.cost}(Product \bowtie Product))
+}
+
+4
+\\\textbf{Relational Algebra :\\
+\\
+\Pi_{Product}(\sigma_{year > 2015}(Product) \setminus \Pi_{sum(cost)}(\sigma_{year < 2015}(Product)))
+}

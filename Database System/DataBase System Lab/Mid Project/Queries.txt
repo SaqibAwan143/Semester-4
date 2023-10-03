@@ -1,0 +1,326 @@
+Questions and Solutions
+
+1. What are the names of the students in group 101?
+Answer: SELECT student_name FROM Students WHERE student_group = 101;
+
+2. What are the names of the projects with status 'in-progress'?
+Answer: SELECT project_name FROM Projects WHERE project_status = 'in-progress';
+
+3. What are the emails of the advisors with type 'main advisor'?
+Answer: SELECT advisor_email FROM Advisors WHERE advisor_type = 'main advisor';
+
+4. What are the names of the evaluations for project 103?
+Answer: SELECT eval_name FROM Evaluations WHERE project_id = 103;
+
+5. Which students have the highest marks for evaluation 2?
+Answer: SELECT student_name FROM Students JOIN Marks ON Students.student_id = Marks.student_id WHERE eval_id = 2 ORDER BY marks_value DESC;
+
+6. What is the name of the project assigned to group 102?
+Answer: SELECT project_name FROM Projects JOIN Student_Group ON Projects.project_id = Student_Group.project_id WHERE group_id = 102;
+
+7. What are the names of the projects with status 'completed'?
+Answer: SELECT project_name FROM Projects WHERE project_status = 'completed';
+
+8. What are the emails of the advisors with type 'co-advisor'?
+Answer: SELECT advisor_email FROM Advisors WHERE advisor_type = 'co-advisor';
+
+9. What are the names of the evaluations for project 104?
+Answer: SELECT eval_name FROM Evaluations WHERE project_id = 104;
+
+10. Which students have the lowest marks for evaluation 3?
+Answer: SELECT student_name FROM Students JOIN Marks ON Students.student_id = Marks.student_id WHERE eval_id = 3 ORDER BY marks_value ASC;
+
+11. What is the name of the project assigned to group 103?
+Answer: SELECT project_name FROM Projects JOIN Student_Group ON Projects.project_id = Student_Group.project_id WHERE group_id = 103;
+
+12. What are the names of the students in group 104?
+Answer: SELECT student_name FROM Students WHERE student_group = 104;
+
+13. What are the emails of the advisors with type 'industry advisor'?
+Answer: SELECT advisor_email FROM Advisors WHERE advisor_type = 'industry advisor';
+
+14. What are the names of the evaluations for project 105?
+Answer: SELECT eval_name FROM Evaluations WHERE project_id = 105;
+
+15. Which students have the highest marks for evaluation 4?
+Answer: SELECT student_name FROM Students JOIN Marks ON Students.student_id = Marks.student_id WHERE eval_id = 4 ORDER BY marks_value DESC;
+
+16. What is the name of the project assigned to group 105?
+Answer: SELECT project_name FROM Projects JOIN Student_Group ON Projects.project_id = Student_Group.project_id WHERE group_id = 105;
+
+17. What are the names of the projects with status 'pending'?
+Answer: SELECT project_name FROM Projects WHERE project_status = 'pending';
+
+18. What are the emails of the advisors with type 'consultant'?
+Answer: SELECT advisor_email FROM Advisors WHERE advisor_type = 'consultant';
+
+19. What are the names of the evaluations for project 106?
+Answer: SELECT eval_name FROM Evaluations WHERE project_id = 106;
+
+20. Which students have the lowest marks for evaluation 5?
+Answer: SELECT student_name FROM Students JOIN Marks ON Students.student_id = Marks.student_id WHERE eval_id = 5 ORDER BY marks_value ASC;
+
+21. What is the name of the project assigned to group 106?
+Answer: SELECT project_name FROM Projects JOIN Student_Group ON Projects.project_id = Student_Group.project_id WHERE group_id = 106;
+
+22. What are the names of the students in group 107?
+Answer: SELECT student_name FROM Students WHERE student_group = 107;
+
+23. What are the emails of the advisors with type 'mentor'?
+Answer: SELECT advisor_email FROM Advisors WHERE advisor_type = 'mentor';
+
+24. What are the names of the evaluations for project 107?
+Answer: SELECT eval_name FROM Evaluations WHERE project_id = 107;
+
+25. Which students have the highest marks for evaluation 6?
+Answer: SELECT student_name FROM Students JOIN Marks ON Students.student_id = Marks.student_id WHERE eval_id = 6 ORDER BY marks_value DESC;
+
+26. What is the name of the project assigned to group 107?
+Answer: SELECT project_name FROM Projects JOIN Student_Group ON Projects.project_id = Student_Group.project_id WHERE group_id = 107;
+
+27. What are the names of the projects with status 'unassigned'?
+Answer: SELECT project_name FROM Projects WHERE project_status = 'unassigned';
+
+28. What are the emails of the advisors with type 'supervisor'?
+Answer: SELECT advisor_email FROM Advisors WHERE advisor_type = 'supervisor';
+
+29. What are the names of the evaluations for project 108?
+Answer: SELECT eval_name FROM Evaluations WHERE project_id = 108;
+
+30. Which students have the lowest marks for evaluation 7?
+Answer: SELECT student_name FROM Students JOIN Marks ON Students.student_id = Marks.student_id WHERE eval_id = 7 ORDER BY marks_value ASC;
+
+Query 1: 
+Question: Retrieve all the students and their respective groups
+
+Solution: SELECT student_name, student_group FROM students;
+
+Query 2: 
+Question: Retrieve all the projects with their respective descriptions 
+
+Solution: SELECT project_name, project_description FROM projects;
+
+Query 3: 
+Question: Retrieve all the advisors with their respective types
+
+Solution: SELECT advisor_name, advisor_type FROM advisors;
+
+Query 4: 
+Question: Retrieve all the evaluations for a particular project
+
+Solution: SELECT eval_name FROM evaluations WHERE project_id = ?;
+
+Query 5: 
+Question: Retrieve all the marks for a particular student
+
+Solution: SELECT marks_value FROM marks WHERE student_id = ?;
+
+Query 6: 
+Question: Retrieve the names of all the students in a particular group
+
+Solution: SELECT student_name FROM students WHERE student_group = ?;
+
+Query 7: 
+Question: Retrieve the name of the project associated with a particular group
+
+Solution: SELECT project_name FROM projects INNER JOIN student_group ON projects.project_id = student_group.project_id WHERE student_group.group_name = ?;
+
+Query 8: 
+Question: Retrieve the names of all the advisors associated with a particular project
+
+Solution: SELECT advisor_name FROM advisors INNER JOIN evaluations ON advisors.advisor_id = evaluations.advisor_id WHERE evaluations.project_id = ?;
+
+Query 9: 
+Question: Retrieve the name of the project with the highest marks
+
+Solution: SELECT project_name FROM projects INNER JOIN marks ON projects.project_id = marks.project_id GROUP BY project_name ORDER BY SUM(marks_value) DESC LIMIT 1;
+
+Query 10: 
+Question: Retrieve the names of all the students who received the highest marks in a particular evaluation
+
+Solution: SELECT student_name FROM students INNER JOIN marks ON students.student_id = marks.student_id WHERE marks.eval_id = ? GROUP BY student_name ORDER BY marks_value DESC;
+
+Query 1:
+
+Question: Get the list of projects with their respective advisory boards
+
+Answer:
+SELECT p.project_name, a.advisor_name 
+FROM Projects p 
+INNER JOIN Advisors a ON p.project_id = a.project_id;
+
+
+Query 2:
+
+Question: Get the list of students in each group
+
+Answer:
+SELECT s.student_name, g.group_name 
+FROM Students s 
+INNER JOIN Student_Group g ON s.student_group = g.group_id;
+
+
+Query 3:
+
+Question: Get the list of projects with the marks of each student
+
+Answer:
+SELECT p.project_name, s.student_name, m.marks_value 
+FROM Projects p 
+INNER JOIN Marks m ON p.project_id = m.project_id 
+INNER JOIN Students s ON m.student_id = s.student_id;
+
+1. What are the projects that have been assigned to a group?
+
+SELECT p.project_name
+FROM Projects p
+INNER JOIN Student_Group sg
+ON p.project_id = sg.project_id;
+
+
+2. What is the list of students that are in a particular group?
+
+SELECT s.student_name
+FROM Students s
+INNER JOIN Student_Group sg
+ON s.student_group = sg.group_id
+WHERE sg.group_name = 'GroupName';
+
+
+3. What is the list of advisors associated with a project?
+
+SELECT a.advisor_name
+FROM Advisors a
+INNER JOIN Projects p
+ON a.advisor_id = p.project_id
+WHERE p.project_name = 'ProjectName';
+
+
+4. What is the list of evaluations taken against a project?
+
+SELECT e.eval_name
+FROM Evaluations e
+WHERE e.project_id = 'ProjectName';
+
+
+5. What is the list of marks given to each student in a particular evaluation?
+
+SELECT m.marks_value, s.student_name
+FROM Marks m
+INNER JOIN Students s
+ON m.student_id = s.student_id
+WHERE m.eval_id = 'evaluationName';
+
+
+6. What is the list of projects that have not been assigned to a group yet?
+
+SELECT p.project_name
+FROM Projects p
+WHERE p.project_status = 'Not Assigned';
+
+
+7. What is the list of students that have not been assigned to a group yet?
+
+SELECT s.student_name
+FROM Students s
+WHERE s.student_group is NULL;
+
+
+8. What is the list of advisors that are not associated with any project?
+
+SELECT a.advisor_name
+FROM Advisors a
+WHERE a.advisor_id NOT IN (SELECT p.project_id
+                            FROM Projects p);
+
+
+9. What is the list of evaluations that have not been taken against any project?
+
+SELECT e.eval_name
+FROM Evaluations e
+WHERE e.project_id IS NULL;
+
+
+10. What is the list of marks that have not been given to any student yet?
+
+SELECT m.marks_value
+FROM Marks m
+WHERE m.student_id IS NULL;
+
+
+1. Query to display all student names and their groups: 
+SELECT student_name, student_group FROM students;
+
+2. Query to display the count of evaluations taken for a particular project: 
+SELECT COUNT(eval_id) FROM evaluations WHERE project_id = <id_of_project>;
+
+3. Query to display the names of all advisors and the type of advisor: 
+SELECT advisor_name, advisor_type FROM advisors;
+
+4. Query to display the name of all students with their respective project names: 
+SELECT students.student_name, projects.project_name 
+FROM students 
+INNER JOIN projects on students.student_group = projects.project_id;
+
+5. Query to display the name of the project and the list of advisors assigned to it: 
+SELECT projects.project_name, advisors.advisor_name 
+FROM projects 
+INNER JOIN advisors on projects.project_id = advisors.advisor_id;
+
+6. Query to display the list of projects and the group assigned to it: 
+SELECT projects.project_name, student_group.group_name 
+FROM projects 
+INNER JOIN student_group on projects.project_id = student_group.project_id;
+
+7. Query to display the name of the student and the marks scored against each evaluation: 
+SELECT students.student_name, marks.marks_value 
+FROM students 
+INNER JOIN marks on students.student_id = marks.student_id;
+
+8. Query to display the list of projects and their current status: 
+SELECT project_name, project_status 
+FROM projects;
+
+9. Query to display the name of the project and the total marks scored by the student in that project: 
+SELECT projects.project_name, SUM(marks.marks_value) AS total_marks 
+FROM projects 
+INNER JOIN marks on projects.project_id = marks.eval_id 
+GROUP BY projects.project_name;
+
+10. Query to display the name of the student and the total marks scored in all evaluations: 
+SELECT students.student_name, SUM(marks.marks_value) AS total_marks 
+FROM students 
+INNER JOIN marks on students.student_id = marks.student_id 
+GROUP BY students.student_name;
+
+11. Query to display the name of the student, the evaluation name and the marks scored in that evaluation: 
+SELECT students.student_name, evaluations.eval_name, marks.marks_value 
+FROM students 
+INNER JOIN marks on students.student_id = marks.student_id 
+INNER JOIN evaluations on marks.eval_id = evaluations.eval_id;
+
+12. Query to display the list of projects with their respective advisors and student groups: 
+SELECT projects.project_name, advisors.advisor_name, student_group.group_name 
+FROM projects 
+INNER JOIN advisors on projects.project_id = advisors.advisor_id 
+INNER JOIN student_group on projects.project_id = student_group.project_id;
+
+13. Query to display the list of projects and the total marks scored by each student in that project: 
+SELECT projects.project_name, students.student_name, SUM(marks.marks_value) AS total_marks 
+FROM projects 
+INNER JOIN marks on projects.project_id = marks.eval_id 
+INNER JOIN students on marks.student_id = students.student_id 
+GROUP BY projects.project_name, students.student_name;
+
+14. Query to display the name of the student and the list of evaluations taken by the student: 
+SELECT students.student_name, evaluations.eval_name 
+FROM students 
+INNER JOIN marks on students.student_id = marks.student_id 
+INNER JOIN evaluations on marks.eval_id = evaluations.eval_id;
+
+15. Query to display the list of projects along with the advisory board and the list of students: 
+SELECT projects.project_name, advisors.advisor_name, student_group.group_name, students.student_name 
+FROM projects 
+INNER JOIN advisors on projects.project_id = advisors.advisor_id 
+INNER JOIN student_group on projects.project_id = student_group.project_id 
+INNER JOIN students on student_group.group_name = students.student_group;

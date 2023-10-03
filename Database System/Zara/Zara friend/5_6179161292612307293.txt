@@ -1,0 +1,32 @@
+create database schooLibrary;
+use schooLibrary;
+ 
+create table book(
+book_name varchar(200),
+book_id int,
+book_price float,
+book_publisher varchar(200),
+date_of_acquisition varchar(40),
+no_of_times_issued int);
+
+create table issuance(
+std_reg_no int,
+book_id int,
+issuer_id int,
+date_of_issue varchar(40),
+date_of_return varchar(40),
+fine float);
+
+create table issuer(
+iss_name varchar(200),
+iss_id int,
+iss_phone int,
+iss_class varchar(40));
+
+create table student(
+std_name varchar(250),
+std_class varchar(40),
+std_roll_no int,
+std_reg_no varchar(40),
+std_phone int);
+

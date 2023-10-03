@@ -1,0 +1,13 @@
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\bin\Debug\CRUD_hometask.exe.config
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\bin\Debug\CRUD_hometask.exe
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\bin\Debug\CRUD_hometask.pdb
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.csproj.AssemblyReference.cache
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.csproj.SuggestedBindingRedirects.cache
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.Properties.Resources.resources
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.csproj.GenerateResource.cache
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.csproj.CoreCompileInputs.cache
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.exe
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.pdb
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.Courses.resources
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.StudentRecord.resources
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\Hometask\CRUD_hometask\CRUD_hometask\obj\Debug\CRUD_hometask.Enrollment.resources

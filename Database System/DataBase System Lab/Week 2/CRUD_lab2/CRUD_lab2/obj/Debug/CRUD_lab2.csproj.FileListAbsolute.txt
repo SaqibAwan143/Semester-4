@@ -1,0 +1,22 @@
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\bin\Debug\CRUD_lab2.exe.config
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\bin\Debug\CRUD_lab2.exe
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\bin\Debug\CRUD_lab2.pdb
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.csproj.AssemblyReference.cache
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.csproj.SuggestedBindingRedirects.cache
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.Form1.resources
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.Properties.Resources.resources
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.csproj.GenerateResource.cache
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.csproj.CoreCompileInputs.cache
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.exe
+E:\University\Semester 3\DSA\Week 10\Project\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.pdb
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\bin\Debug\CRUD_lab2.exe.config
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\bin\Debug\CRUD_lab2.exe
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\bin\Debug\CRUD_lab2.pdb
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.csproj.AssemblyReference.cache
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.csproj.SuggestedBindingRedirects.cache
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.Form1.resources
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.Properties.Resources.resources
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.csproj.GenerateResource.cache
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.csproj.CoreCompileInputs.cache
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.exe
+E:\University\Semester 4\Database System\DataBase System Lab\Week 2\CRUD_lab2\CRUD_lab2\obj\Debug\CRUD_lab2.pdb

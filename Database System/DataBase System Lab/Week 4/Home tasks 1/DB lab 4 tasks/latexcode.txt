@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Lab 4 Home Tasks}
+\author{Saqib Shehzad \\ \\Registration no. 2021-CS-187}
+\date{February 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+
+\begin{center}
+\textbf{Query 1} \\
+\vspace{10pt}
+\begin{tabular}{l}
+\textbf{SELECT} Products.ProductName \\
+\textbf{FROM} Products \\
+\textbf{GROUP BY} ProductName, UnitPrice \\
+\textbf{HAVING} UnitPrice $>$ \textbf{AVG}(UnitPrice) \\
+\\\includegraphics{1.png} 
+\end{tabular}
+
+\vspace{20pt}
+
+\textbf{Query 2} \\
+\vspace{5pt}
+\begin{tabular}{l}
+\textbf{SELECT} * \\
+\textbf{FROM} Orders \\
+\textbf{WHERE} ShippedDate \textbf{IS NOT} NULL \\
+\textbf{ORDER BY} ShippedDate \textbf{ASC} \\
+\end{tabular}
+\\\includegraphics{2.png} 
+
+\vspace{20pt}
+
+\textbf{Query 3} \\
+\vspace{10pt}
+\begin{tabular}{l}
+\textbf{SELECT} s.Country \\
+\textbf{FROM} Suppliers s, Suppliers s1 \\
+\textbf{WHERE} s.Country = s1.Country \\
+\textbf{GROUP BY} s.Country \\
+\textbf{HAVING} \textbf{COUNT}(s.Country) $>$ 2 \\
+\end{tabular}
+\\\includegraphics{3.png} 
+
+\vspace{20pt}
+
+\textbf{Query 4} \\
+\vspace{10pt}
+\begin{tabular}{l}
+\textbf{SELECT} \textbf{MONTH}(ShippedDate) \textbf{AS} 'Month Number', \textbf{COUNT}(OrderID) \textbf{AS} 'Orders Delayed' \\
+\textbf{FROM} Orders \\
+\textbf{WHERE} ShippedDate $>$ RequiredDate \\
+\textbf{GROUP BY} \textbf{MONTH}(ShippedDate); \\
+\end{tabular}
+\\\includegraphics{4.png} 
+
+\vspace{20pt}
+
+\textbf{Query 5} \\
+\vspace{10pt}
+\begin{tabular}{l}
+\textbf{SELECT} OrderID, \textbf{SUM}(Discount) \textbf{AS} 'Discount' \\
+\textbf{FROM} [Order Details] \\
+\textbf{WHERE} Discount $>$ 0 \\
+\textbf{GROUP BY} OrderID; \\
+\end{tabular}
+\\\includegraphics{5.png} 
+
+\vspace{20pt}
+
+\textbf{Query 6} \\
+\vspace{10pt}
+\begin{tabular}{l}
+\textbf{SELECT} ShipCity, \textbf{COUNT}(OrderID) \textbf{AS} NumberOfOrders \\
+\textbf{FROM} Orders \\
+\textbf{WHERE} ShipCountry = 'USA' \textbf{AND} \textbf{YEAR}(ShippedDate) = 1997 \\
+\textbf{GROUP BY} ShipCity; \\
+\end{tabular}
+\\\includegraphics{6.png} 
+
+\vspace{20pt}
+
+\textbf{Query 7} \\
+\vspace{10pt}
+\begin{tabular}{l}
+\textbf{SELECT} ShipCountry, \textbf{COUNT}(*) \textbf{AS} 'Orders Delayed' \\
+\textbf{FROM} Orders \\
+\textbf{WHERE} ShippedDate $>$ RequiredDate \\
+\textbf{GROUP BY} ShipCountry \\
+\end{tabular}
+\\\includegraphics{7.png} 
+
+\vspace{20pt}
+
+\textbf{Query 8} \\
+\vspace{10pt}
+\begin{tabular}{l}
+\textbf{SELECT} Orders.OrderID, \textbf{SUM}(Discount) \textbf{AS} Discount, \textbf{SUM}([Order Details].UnitPrice * Quantity)\\
+\textbf{AS} TotalPrice \\
+\textbf{FROM} Orders \\
+\textbf{JOIN} [Order Details] \textbf{ON} Orders.OrderID = [Order Details].OrderID \\
+\textbf{GROUP BY} Orders.OrderID \\
+\end{tabular}
+\\\includegraphics{8.png} 
+
+\vspace{20pt}
+
+\textbf{Query 9} \\
+\vspace{10pt}
+\begin{tabular}{l}
+\textbf{SELECT} ShipRegion, ShipCity, \textbf{COUNT}(OrderID) \textbf{AS} Orders \\
+\textbf{FROM} Orders \\
+\textbf{WHERE} \textbf{YEAR}(ShippedDate) = 1997 \\
+\textbf{GROUP BY} ShipRegion, ShipCity; \\
+\end{tabular}
+\\\includegraphics{9.png}
+
+\end{center}
+
+\end{document}

@@ -1,0 +1,44 @@
+Students( student_id, student_name, student_email, student_group)
+
+Advisors( advisor_id, advisor_name, advisor_type, advisor_email)
+
+Projects(project_id, project_name, project_description, project_status)
+
+Student_Group(group_id, group_name, project_id)
+
+Evaluations(eval_id, eval_name, project_id)
+
+Marks(marks_id, marks_value, student_id, eval_id)
+
+
+
+1. SELECT student_name, student_group FROM Students WHERE student_group IS NOT NULL;
+2. SELECT project_name, project_description FROM Projects WHERE project_status = 'Active';
+3. SELECT advisor_name, advisor_type FROM Advisors WHERE advisor_type = 'Main Advisor';
+4. SELECT group_name, project_id FROM Student_Group WHERE project_id IS NOT NULL;
+5. SELECT eval_name, project_id FROM Evaluations WHERE project_id IS NOT NULL;
+6. SELECT student_name, marks_value FROM Students INNER JOIN Marks ON Students.student_id = Marks.student_id;
+7. SELECT advisor_name, project_name FROM Advisors INNER JOIN Projects ON Advisors.advisor_id = Projects.project_id;
+8. SELECT student_name, eval_name FROM Students INNER JOIN Evaluations ON Students.student_id = Evaluations.eval_id;
+9. SELECT project_name, student_group FROM Projects INNER JOIN Student_Group ON Projects.project_id = Student_Group.group_id;
+10. SELECT project_name, advisor_name FROM Projects INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id;
+11. SELECT student_name, eval_name, marks_value FROM Students INNER JOIN Evaluations ON Students.student_id = Evaluations.eval_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+12. SELECT student_name, advisor_name, project_name FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id;
+13. SELECT project_name, student_name, eval_name, marks_value FROM Projects INNER JOIN Student_Group ON Projects.project_id = Student_Group.group_id INNER JOIN Students ON Student_Group.group_id = Students.student_group INNER JOIN Evaluations ON Projects.project_id = Evaluations.project_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+14. SELECT project_name, student_name, advisor_name FROM Projects INNER JOIN Student_Group ON Projects.project_id = Student_Group.group_id INNER JOIN Students ON Student_Group.group_id = Students.student_group INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id;
+15. SELECT advisor_name, eval_name, marks_value FROM Advisors INNER JOIN Evaluations ON Advisors.advisor_id = Evaluations.project_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+16. SELECT student_name, project_name, advisor_name FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id;
+17. SELECT student_name, eval_name, marks_value FROM Students INNER JOIN Evaluations ON Students.student_id = Evaluations.eval_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+18. SELECT project_name, student_name, advisor_name FROM Projects INNER JOIN Student_Group ON Projects.project_id = Student_Group.group_id INNER JOIN Students ON Student_Group.group_id = Students.student_group INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id;
+19. SELECT advisor_name, project_name, eval_name FROM Advisors INNER JOIN Projects ON Advisors.advisor_id = Projects.project_id INNER JOIN Evaluations ON Projects.project_id = Evaluations.project_id;
+20. SELECT student_name, project_name, eval_name, marks_value FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Evaluations ON Projects.project_id = Evaluations.project_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+21. SELECT student_name, project_name, marks_value FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Marks ON Student_Group.group_id = Marks.student_id;
+22. SELECT student_name, project_name, eval_name, marks_value FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Evaluations ON Projects.project_id = Evaluations.project_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+23. SELECT project_name, student_name, advisor_name FROM Projects INNER JOIN Student_Group ON Projects.project_id = Student_Group.group_id INNER JOIN Students ON Student_Group.group_id = Students.student_group INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id;
+24. SELECT student_name, project_name, advisor_name, eval_name, marks_value FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id INNER JOIN Evaluations ON Projects.project_id = Evaluations.project_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+25. SELECT project_name, student_name, eval_name FROM Projects INNER JOIN Student_Group ON Projects.project_id = Student_Group.group_id INNER JOIN Students ON Student_Group.group_id = Students.student_group INNER JOIN Evaluations ON Projects.project_id = Evaluations.project_id;
+26. SELECT student_name, project_name, marks_value FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Marks ON Student_Group.group_id = Marks.student_id;
+27. SELECT student_name, eval_name, marks_value FROM Students INNER JOIN Evaluations ON Students.student_id = Evaluations.eval_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+28. SELECT project_name, advisor_name FROM Projects INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id;
+29. SELECT student_name, project_name, eval_name, marks_value FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Evaluations ON Projects.project_id = Evaluations.project_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;
+30. SELECT student_name, project_name, advisor_name, eval_name, marks_value FROM Students INNER JOIN Student_Group ON Students.student_group = Student_Group.group_id INNER JOIN Projects ON Student_Group.project_id = Projects.project_id INNER JOIN Advisors ON Projects.project_id = Advisors.advisor_id INNER JOIN Evaluations ON Projects.project_id = Evaluations.project_id INNER JOIN Marks ON Evaluations.eval_id = Marks.eval_id;

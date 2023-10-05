@@ -1,0 +1,128 @@
+task1
+#include <stdio.h> 
+#include <stdlib.h> 
+  
+int main(int argc, char *argv[]) 
+{ 
+    FILE *fp1, *fp2; 
+    char ch; 
+  
+    /* checking for correct number of arguments */
+    if (argc != 3) 
+    { 
+        printf("Usage: %s <source_file> <target_file>\n", argv[0]); 
+        exit(EXIT_FAILURE); 
+    } 
+  
+    /* open source file in read mode */
+    fp1 = fopen(argv[1], "r"); 
+  
+    /* error handling */
+    if (fp1 == NULL) 
+    { 
+        perror("Error while opening the file.\n"); 
+        exit(EXIT_FAILURE); 
+    } 
+  
+    /* open target file in write mode */
+    fp2 = fopen(argv[2], "w"); 
+  
+    /* error handling */
+    if (fp2 == NULL) 
+    { 
+        perror("Error while opening the file.\n"); 
+        exit(EXIT_FAILURE); 
+    } 
+  
+    /* copy the contents */
+    while ((ch = fgetc(fp1)) != EOF) 
+        fputc(ch, fp2); 
+  
+    printf("File copied successfully.\n"); 
+  
+    /* close the opened files */
+    fclose(fp1); 
+    fclose(fp2); 
+  
+    return 0; 
+}
+
+**************
+t2
+#include <stdio.h> 
+#include <dirent.h> 
+#include <string.h> 
+#include <sys/types.h> 
+
+int main(int argc, char *argv[]) 
+{ 
+    struct dirent *de;  // Pointer for directory entry 
+  
+    // opendir() returns a pointer of DIR type.  
+    DIR *dr = opendir(argv[1]); 
+  
+    if (dr == NULL)  // opendir returns NULL if couldn't open directory 
+    { 
+        printf("Could not open current directory" ); 
+        return 0; 
+    } 
+  
+    // Refer http://pubs.opengroup.org/onlinepubs/7990989775/xsh/readdir.html 
+    // for readdir() 
+    while ((de = readdir(dr)) != NULL) 
+            printf("%s\t%s\n", de->d_name, 
+                                (de->d_type == DT_DIR) ? "Directory" : "File"); 
+  
+    closedir(dr);     
+    return 0; 
+}
+
+*********
+task 3
+#include <stdio.h> 
+#include <dirent.h> 
+#include <string.h> 
+#include <sys/types.h> 
+#include <sys/stat.h> 
+#include <unistd.h> 
+
+int main(int argc, char *argv[]) 
+{ 
+    struct dirent *de;  // Pointer for directory entry 
+
+    char directory[1000];  
+  
+    // opendir() returns a pointer of DIR type.  
+    DIR *dr = opendir(argv[1]); 
+  
+    if (dr == NULL)  // opendir returns NULL if couldn't open directory 
+    { 
+        printf("Could not open current directory" ); 
+        return 0; 
+    } 
+  
+    // Refer http://pubs.opengroup.org/onlinepubs/7990989775/xsh/readdir.html 
+    // for readdir() 
+    while ((de = readdir(dr)) != NULL) { 
+        struct stat st; 
+        stat(de->d_name, &st); 
+        snprintf(directory, sizeof(directory), "%s/%s", argv[1], de->d_name); 
+        
+        // Create directory based on file type 
+        if(S_ISREG(st.st_mode)) { 
+            char* ext = strrchr(de->d_name, '.'); 
+            if(ext != NULL) { 
+                char folder[1000]; 
+                snprintf(folder, sizeof(folder), "%s/%s", argv[2], ext+1); 
+                mkdir(folder, 0777); 
+                char new_file[1000]; 
+                snprintf(new_file, sizeof(new_file), "%s/%s", folder, de->d_name); 
+                rename(directory, new_file); 
+            } 
+        } 
+    } 
+  
+    closedir(dr);     
+    return 0; 
+}
+****
